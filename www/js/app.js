@@ -51,9 +51,11 @@ var	flag = null,
 				acts = $('.actions'),
 				con = $('.console'),
 				sections = $('.sections');
-			con.height(function(){
-				return $(window).height()-$('.header').height()-sections.height();
-			});	
+			setTimeout(function(){
+				con.height(function(){
+					return $(window).height()-$('.header').height()-sections.height();
+				});	
+			},1000)
 			navi.on('click','.item',function(){
 				var m = $(this).data('meta');
 				act_button(m.status);
