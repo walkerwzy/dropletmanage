@@ -16,21 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-var exitAppPopup=function() {
-    navigator.notification.confirm(
-          'Confirm exit?'
-        , function(button) {
-            if (button == 2) {
-              navigator.app.exitApp();
-            }else{
-                exitFlag = false;
-            }
-          }
-        , 'Exit'
-        , 'No,Yes'
-    );  
-    return false;
-};
+// var exitAppPopup=function() {
+//     navigator.notification.confirm(
+//           'Confirm exit?'
+//         , function(button) {
+//             if (button == 2) {
+//               navigator.app.exitApp();
+//             }else{
+//                 exitFlag = false;
+//             }
+//           }
+//         , 'Exit'
+//         , 'No,Yes'
+//     );  
+//     return false;
+// };
 var app = {
     // Application Constructor
     initialize: function() {
@@ -51,7 +51,7 @@ var app = {
                     toast('back again to quit');
                     exitFlag = true;
                 }else{
-                    exitAppPopup();
+                    navigator.app.exitApp();
                 }
             }
         }, false);

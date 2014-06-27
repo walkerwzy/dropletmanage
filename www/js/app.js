@@ -11,7 +11,7 @@ var	flag = null,
 		};
 		if(error){
 			m.addClass('error').html(msg).show();
-			flag = setTimeout(function(){m.hide();},speed0);
+			flag = setTimeout(function(){m.hide();},10000);
 		}
 		else{
 			m.removeClass('error').html(msg).show();
@@ -75,7 +75,6 @@ var	flag = null,
 					intflag = null,
 					speed = 2000,
 					_check = function(actionid){
-								con[0].scrollTop = con[0].scrollHeight;
 								apis.action(id,actionid).then(function(d){
 									if(d.action.status == 'completed') {
 										clearInterval(intflag);
@@ -120,6 +119,7 @@ var	flag = null,
 		if(typeof msg === 'object') msg = JSON.stringify(msg);
 		var c = $('.console');
 		c.html(c.html()+'<p>'+new Date().toLocaleTimeString()+': '+msg+'</p>');
+		c[0].scrollTop = c[0].scrollHeight; // scroll to bottom
 	},
 	clearlog = function(){
 		$('.console').empty();
