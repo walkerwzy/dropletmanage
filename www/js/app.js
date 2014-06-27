@@ -1,5 +1,4 @@
-var token = '',
-	flag = null,
+var	flag = null,
 	toastflag = null,
 	inited = false,
 	exitFlag = false,
