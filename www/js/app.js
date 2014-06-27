@@ -1,4 +1,4 @@
-var token = 'd4aa270cf126a9f0ae424bdcdad6af220cc9eb20d9bedd0bdcc71aec754fa036',
+var token = '',
 	flag = null,
 	toastflag = null,
 	inited = false,
