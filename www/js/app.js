@@ -81,6 +81,7 @@ var	flag = null,
 									if(d.action.status == 'completed') {
 										clearInterval(intflag);
 										apis.droplet(id).then(function(d){
+											apis.listdroplets();
 											act_button(d.droplet.status);
 										});
 										log('done!');
@@ -194,7 +195,7 @@ function api(){
 	},
 	self.action = function(dropletid, actionid){
 		log('querying action status...');
-		return $.get(url+dropletid+'/actions/'+actionid,{type:'power_on'},function(d){
+		return $.get(url+dropletid+'/actions/'+actionid,function(d){
 			show('hide');
 			log(d);
 		})
